@@ -1,0 +1,33 @@
+
+.container {
+    display: grid;
+    grid-template-columns: 15% 68% 15%;
+    grid-template-areas: 'backpages carts nextpages';
+}
+
+
+
+.carts{
+    grid-area:carts;
+    margin-top: 40px;
+    margin-left: 10px;
+    grid-area: carts;
+    display: flex;
+    justify-items: center;
+
+}
+.pages{
+    width: 100%;
+    height: 20%;
+}
+
+.back{
+    position: sticky;
+    grid-area: backpages;
+    top: 50px;
+}
+.next{
+    position: sticky;
+    grid-area: nextpages;
+    top: 50px;
+}

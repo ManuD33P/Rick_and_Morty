@@ -1,0 +1,17 @@
+
+.conteiner{
+    
+    margin-top: 25px;
+    /* margin-left: 30px;
+    margin-bottom: 50px; */
+    justify-content: center;
+    border-radius: 10px;
+    display:flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    width: auto;
+    /* grid-template-columns: repeat(3,1fr); */
+    font-size: 8px;
+}
+
+

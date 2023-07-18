@@ -1,0 +1,9 @@
+UseEffect useState
+useLocation
+useNavigetor
+
+
+
+hacer funcion que reciba los characters desde la api.
+hacer funcion que elimine una card.
+hacer funcion de formulario. 
