@@ -95,7 +95,12 @@ function App() {
             />
            <Route
                path='/detail/:id'
-               element={<Detail />}
+               element={
+               <>
+               <Title/>
+               <Detail />
+               </>
+               }
             />
           <Route
                path='/allCharacters/:page'

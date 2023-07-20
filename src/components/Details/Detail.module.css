@@ -1,10 +1,6 @@
 
 .container{
-  /* display: flex;
-  justify-items: space-around;
-  width:90%;
-  height: 100vh;
-  color:white; */
+ 
   display:grid;
   border:5px solid black;
   grid-template-columns: 30% 60% 8%;
@@ -13,7 +9,7 @@
   grid-template-areas: 'imageCard infoCard closeCart';
   gap: 1%;
   height: 50vh;
-  margin-top: 15%;
+  margin-top: 60px;
   width: 60%;
   background-color: #424242;
 }
@@ -31,15 +27,7 @@
 }
 
 .info{
-    /* width: 40% ;
-    margin-top: 10%;
-    height: 70%;
-    background-color: black;
-    display:flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    grid-area: info; */
+   
     display: flex;
     flex-direction: column;
     text-align: center;

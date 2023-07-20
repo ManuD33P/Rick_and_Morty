@@ -7,10 +7,14 @@ const About = () => {
       <Title />
       <section className={styled.content}>
         <div className={styled.container}>
-          <h1 className={styled.title}>About me</h1>
-          <img className={styled.image} src={imgSrc} alt='Esta es mi imagen de perfil' />
-
-          <p className={styled.text}>
+          <div className={styled.title}>
+          <h1 >About me</h1>
+          </div>
+          <div className={styled.image}>
+          <img  src={imgSrc} alt='Esta es mi imagen de perfil' />
+          </div>
+          <div className={styled.text}>
+          <p >
             Hello my name Emanuel Dominguez, they call me Manu or Ema, I study
             programming since I was a kid as a hobby, I am 27 years old, after
             having been a paratrooper soldier in the Argentine Army, I decided
@@ -19,6 +23,7 @@ const About = () => {
             physics, and it also attracts my attention the development of video
             games, as well as new services.
           </p>
+         </div>
         </div>
       </section>
     </>
