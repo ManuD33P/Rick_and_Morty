@@ -3,10 +3,16 @@ import { useState, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Title from '../Title/Title';
 export default function SearchBar({onSearch}) {
+      //hooks
       const [id,setId] = useState(null)
-      const handleChangeId = (event) => event.target.value && setId(event.target.value)
       const navigate = useNavigate()
+
+      //obtoner la id
+      const handleChangeId = (event) => event.target.value && setId(event.target.value)
+       // boton para ir al explorer
       const handleNavigate = () => navigate('/allCharacters/1');
+      
+        // funcion para obtener cuando se mandar el formulario.
       const handleSubmit = (event) => {
              event.preventDefault();
               onSearch(id);

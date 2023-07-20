@@ -1,0 +1,4 @@
+export const ADD_FAVORITE = 'ADD_FAVORITE'
+export const DEL_FAVORITE = 'DEL_FAVORITE'
+export const ADD_ULTIMATE_ROUTE = 'ADD_ULTIMATE_ROUTE'
+export const ADD_LOGIN = 'ADD_LOGIN'

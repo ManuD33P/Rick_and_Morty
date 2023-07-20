@@ -1,5 +1,6 @@
 // hook import
 import { useState,useEffect,StrictMode } from "react";
+import { useNavigate, useParams } from "react-router-dom";
 
 //style
 import styled from "./BarPages.module.css";
@@ -7,18 +8,25 @@ import styled from "./BarPages.module.css";
 import Cards from "../Cards/Cards";
 //herramientas
 import axios from "axios";
-import { useNavigate, useParams } from "react-router-dom";
+
+// imagenes
 import  iconLeft  from "../../utils/icons/lefticon.svg"
 import iconRight from "../../utils/icons/rigthicon.svg"
+
+
+
 const BarPages = (props) => {
-//  const [pages,setPage] = useState(1);
+//  
  const [characters,setCharacters] = useState([]);
+
  const {page} = useParams()
+
  const navigate = useNavigate();
+
  // capturo las pages.
  const handleChangePage = (event)=> {
     const pageValue = event.target.getAttribute('name');
-     console.log(page)
+
     if(pageValue==='back'){
         if(Number(page)===1) return alert('No hay mas paginas hacia atras')
         else{
@@ -30,6 +38,7 @@ const BarPages = (props) => {
           
         
     } 
+
     if(pageValue==='next'){
         if(Number(page)===42) return alert('No hay mas paginas');
         else{
@@ -40,8 +49,8 @@ const BarPages = (props) => {
           
     }
 };
-//
- 
+
+ //cada vez que se actualiza page, hace una nueva solicitud para obtener characters.
  useEffect(()=> {
 
     page &&
@@ -54,6 +63,9 @@ const BarPages = (props) => {
      
  },[page]);
  
+
+  // funcion onClose para las cards.
+
  function onClose(id) {
     setCharacters(
       characters.filter((character) => {
@@ -63,7 +75,6 @@ const BarPages = (props) => {
    }
  
 return (
-    <StrictMode>
 
     <section className={styled.container}>
         <img name="back" className= {[styled.pages, styled.back].join(" ")} onClick={handleChangePage} src={iconLeft}/>
@@ -73,7 +84,6 @@ return (
         <Cards characters={characters} onClose={onClose}/>
         </div>
     </section>
-    </StrictMode>
 
 )
 }

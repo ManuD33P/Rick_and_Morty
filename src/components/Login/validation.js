@@ -1,3 +1,4 @@
+import {username,password} from '../../dataLogin'
 
 const validationEmail = /^[\w.%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$/;
 
@@ -22,8 +23,21 @@ if(!validationPassword2.test(password)){
 }
 
 
+
 return errors
 
 }
 
+export const isLoginTrue = (userName,passWord) => {
+    let errors = {}
+
+    if(userName !== username) errors.username = 'Nombre de usuario incorrecto.'
+    
+    if(passWord !== password)  errors.password = 'La contraseña ingresa es incorrecta.'
+    
+    if(errors.username || errors.password ){
+        return errors
+    } else return "isTrue"
+     
+}
 export default validation

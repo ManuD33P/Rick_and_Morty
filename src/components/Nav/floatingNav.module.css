@@ -1,0 +1,44 @@
+.navContainer {
+    position: fixed;
+    top: 0;
+    left: -199px; 
+    height: 100%;
+    z-index: 9999;
+    width: 200px; 
+    background-color: #000000;
+    transition: left 0.3s; 
+  }
+  
+  .navisible {
+    left: 0;
+  }
+  
+  .navhidden {
+    left: -199px;
+  }
+  
+  .floatingNav {
+    padding: 20px;
+  }
+  
+  .floatingNav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .floatingNav li {
+    margin-bottom: 10px;
+  }
+  .floatingNav li:hover {
+    font-size: 30px;
+  transition: font-size 0.3s
+  }
+  
+  .floatingNav a {
+    color: hwb(0 39% 61%);
+    text-decoration: none;
+  }
+
+  
+ 

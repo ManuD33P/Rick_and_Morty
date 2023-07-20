@@ -1,6 +1,7 @@
 
 import { useNavigate,useParams } from "react-router-dom"
 import { useState, useEffect} from "react";
+import { useSelector } from "react-redux";
 import axios from "axios";
 import { flushSync } from "react-dom";
 import styles from './Detail.module.css';
@@ -22,17 +23,21 @@ useEffect( () => {
 
     }).catch((error)=> alert(error))
 },[id])
+
+const isLogin = useSelector(state => state.login)
+
+    
+    
+    useEffect(()=>{
+
+      if(isLogin !== true) { navigate("/")}
+    
+    },[])
+
+
 const navigate = useNavigate();
-// const handleBackHome = () => {
-//     if(!document.startViewTransition){
-//         navigate("/home")
-//         return;
-//     }
-//     document.startViewTransition( ()=>
-//     flushSync(()=> navigate("/home"))
-//     );
-// } 
-const routeBack = localStorage.getItem('backRoute')
+
+const routeBack = useSelector(state => state.ultimateRoute)
 const handleBack = () => {
     if(!document.startViewTransition){
         navigate(routeBack)
@@ -40,16 +45,15 @@ const handleBack = () => {
     }
     document.startViewTransition( ()=>{
         flushSync(()=>{
-            
             navigate(routeBack)
         })
-
-    }
-    );
+    });
 }
+
 if (!character) {
     return <div>Cargando...</div>; // Mostrar mensaje de carga mientras se obtienen los datos
   }
+  
   const name = character.name || '';
   const species = character.species || '';
   const gender = character.gender || '';
@@ -63,9 +67,7 @@ const obj = {
     gender:{viewTransitionName:`gender${id}`},
     specie:{viewTransitionName:`specie${id}`}
 }
-/* "name":"Aqua Rick","status":"unknown","species":"Humanoid","type":"Fish-Person","gender":"Male","origin":{"name":"unknown","url":""},"location":{"name":"Citadel of Ricks"
 
-*/
 return(
     <div className={styles.container}>
         <img className={styles.image} style={obj.img} src={character.image} alt={character.name} />
@@ -82,7 +84,6 @@ return(
       </div>
 
 
-        {/* <button onClick={handleBackHome}>Back Home</button> */}
     </div>
     )
 }

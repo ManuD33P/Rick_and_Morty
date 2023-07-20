@@ -81,3 +81,11 @@
     width: 100%;
     grid-column-start: 2;
 }
+.linked{
+    background-color: black;
+}
+
+.linked:hover{
+    font-size: 15px;
+    transition: font-size 0.5ms;
+}

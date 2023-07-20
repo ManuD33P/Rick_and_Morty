@@ -7,7 +7,9 @@ import Cards from './components/Cards/Cards';
 import SearchBar from './components/SearchBar/SearchBar.jsx';
 import Login from "./components/Login/Login";
 import BarPages from './components/Pages/BarPages';
-import Detail from './components/Details/Detail'
+import Detail from './components/Details/Detail';
+import FloatingNav from './components/Nav/FloatingNav';
+import Favorite from './components/Favorite/Favorite';
 //HOOKS
 import { useState} from 'react';
 
@@ -24,9 +26,13 @@ import Title from './components/Title/Title';
 
 
 function App() {
- 
+   // hooks
    const [characters, setCharacters] = useState([]);
    const {pathname} = useLocation();
+   //obtengo el estado global.
+ 
+  // funcion de busquedad
+
    function onSearch(id) {
       if(Number(id)>= 1 && Number(id) <= 826 ){
          const searchRepeat = characters && characters.some(element => element.id===Number(id))
@@ -43,6 +49,8 @@ function App() {
       else alert('No hay personajes con ese id.');
    } 
    
+
+   //funcion para cerrar card.
    function onClose(id) {
     setCharacters(
       characters.filter((character) => {
@@ -51,18 +59,32 @@ function App() {
     )
    }
    
+   
+
+
+
    return (
       <div className='App'>
             {
               pathname === '/home' &&
-            <SearchBar 
-            onSearch={onSearch}
-             />
-            }
+              (<>
+              <SearchBar 
+              onSearch={onSearch}
+              />
+              </>)
+         }
+         
+         {  
+         pathname !== '/' ?
+            <FloatingNav/> : null
+         }
          <Routes>
            <Route
                path='/'
-               element={<Login/>}
+               element={<>
+               <Login/>
+               </>
+               }
            />
           <Route
                path='/home'
@@ -82,6 +104,10 @@ function App() {
                </>
                }
            />
+
+           <Route
+           path='/myFavorite'
+           element={<Favorite/>} />
          </Routes>
       </div>
    );
