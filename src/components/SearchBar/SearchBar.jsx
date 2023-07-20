@@ -1,5 +1,5 @@
 import style from './search.module.css'
-import { useState, useRef } from 'react';
+import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Title from '../Title/Title';
 export default function SearchBar({onSearch}) {
@@ -27,7 +27,7 @@ export default function SearchBar({onSearch}) {
          
          <input 
           type='text'
-          placeholder='Busquedad por id'
+          placeholder='Search by id'
          
           className={style.search}
           onChange={handleChangeId}
@@ -40,7 +40,7 @@ export default function SearchBar({onSearch}) {
          <button 
          onClick = {handleNavigate}
          className={style.btnAdd}>
-         Explorar</button>
+         Explore</button>
          </div>
       </form>
          </>

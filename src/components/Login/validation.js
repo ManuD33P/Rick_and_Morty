@@ -11,15 +11,15 @@ const validationPassword2 = /^.{6,10}$/
 const errors = {};
 
 if(!validationEmail.test(username)){
-    errors.username = 'Debe ser un formato de Email valido.'
+    errors.username = 'It must be a valid email format.'
 }
 
 if(!validationPassword.test(password)){
-    errors.password = 'Debe contener almenos un numero.'
+    errors.password = 'Must contain at least one number.'
 }
 
 if(!validationPassword2.test(password)){
-    errors.password = 'Debe tener una longitud entre 6 y 10 caracters'
+    errors.password = 'It must be between 6 and 10 characters long.'
 }
 
 
@@ -31,9 +31,9 @@ return errors
 export const isLoginTrue = (userName,passWord) => {
     let errors = {}
 
-    if(userName !== username) errors.username = 'Nombre de usuario incorrecto.'
+    if(userName !== username) errors.username = 'Incorrect username.'
     
-    if(passWord !== password)  errors.password = 'La contraseña ingresa es incorrecta.'
+    if(passWord !== password)  errors.password = 'The entered password is incorrect.'
     
     if(errors.username || errors.password ){
         return errors

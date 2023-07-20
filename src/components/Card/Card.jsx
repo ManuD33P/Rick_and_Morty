@@ -6,7 +6,6 @@ import { flushSync } from "react-dom";
 import { useState,useEffect } from "react";
 import {addFavorite,delFavorite,addUltimateRoute} from "../../redux/actions"
 import { useSelector,useDispatch } from "react-redux";
-import { ADD_ULTIMATE_ROUTE } from "../../redux/action-types";
 
 
 export default function Card({id,name,species,gender,image,onClose}) {
@@ -27,7 +26,6 @@ export default function Card({id,name,species,gender,image,onClose}) {
             return;
         }
         document.startViewTransition( ()=>{
-            console.log(backhome.pathname)
             Dispatch(dispatch => dispatch(addUltimateRoute(backhome.pathname)))
             flushSync(()=> navigate(`/detail/${id}`))
         }
@@ -73,8 +71,8 @@ export default function Card({id,name,species,gender,image,onClose}) {
          </header>
            <h2  style={obj.name} className={styles.name}>{name}</h2>
           <aside className={styles.info}>
-            <h4  className={styles.text}>Especie:</h4> <span style={obj.specie} className={styles.span}>{species}</span>
-            <h4   className={styles.text}>Genero:</h4> <span style={obj.gender} className={styles.span}>{gender}</span>
+            <h4  className={styles.text}>Species:</h4> <span style={obj.specie} className={styles.span}>{species}</span>
+            <h4   className={styles.text}>Gender:</h4> <span style={obj.gender} className={styles.span}>{gender}</span>
             {linked()}
           </aside>
        </div>

@@ -1,0 +1,9 @@
+
+
+.container{
+margin-bottom: 100px;
+display: flex;
+text-align: center;
+width: 100%;
+justify-content: center;
+}

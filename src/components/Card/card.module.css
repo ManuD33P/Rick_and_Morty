@@ -68,13 +68,13 @@
 .text{
     padding-right: 5px;
     text-align: end;
-    color:rgb(50, 205, 63);
+    color:rgb(11, 196, 27);
     font-size: auto;
     justify-items:center;
     grid-column-start: 1;
 }
 .span{
-    color:rgb(50, 205, 63);
+    color:rgb(11, 196, 27);
     font-size: auto;
     margin-right: 5px;
     font-weight: bold;
@@ -89,3 +89,4 @@
     font-size: 15px;
     transition: font-size 0.5ms;
 }
+

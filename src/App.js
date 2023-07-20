@@ -10,6 +10,7 @@ import BarPages from './components/Pages/BarPages';
 import Detail from './components/Details/Detail';
 import FloatingNav from './components/Nav/FloatingNav';
 import Favorite from './components/Favorite/Favorite';
+import About from './components/About/About';
 //HOOKS
 import { useState} from 'react';
 
@@ -42,11 +43,11 @@ function App() {
            if (data.name) {
               setCharacters((oldChars) => [...oldChars, data]);
            } else {
-              alert('¡No hay personajes con este ID!');
+              alert('There are no characters with this ID!');
             }
-         }): alert('No se pueden buscar personajes Repetidos')
+         }): alert('Can\'t search for Repeating characters.')
       }
-      else alert('No hay personajes con ese id.');
+      else alert('There are no characters with that id.');
    } 
    
 
@@ -106,9 +107,18 @@ function App() {
            />
 
            <Route
-           path='/myFavorite'
-           element={<Favorite/>} />
+               path='/myFavorite'
+            element={<Favorite/>}
+           />
+
+           <Route
+               path='/about'
+               element={<About/>}
+            />
+
          </Routes>
+
+
       </div>
    );
 }
